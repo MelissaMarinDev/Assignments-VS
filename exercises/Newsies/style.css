@@ -1,0 +1,33 @@
+
+body{
+    background-color: #f2f4f7;
+}
+header{
+    text-align:center;
+}
+section {
+    display: inline-block;
+    width: 200px;
+    height: 800px;
+    margin: 1em;
+    padding: 15px;
+    background-color: lightgrey;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    
+    
+
+}
+.subtitle {
+    color: darkblue;
+    text-align: center;
+}
+main {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block; 
+    
+
+}
