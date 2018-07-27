@@ -1,0 +1,38 @@
+body{
+    background-color: grey;
+
+}
+nav{
+position: fixed;
+background-color: #ce293c;
+width: 100%;
+text-align:center;
+height: 30px;
+color: white;
+padding-top:10px;
+
+}
+header{
+    text-align: center;
+    font-size: 200%;
+    padding-top: 70px;
+    
+
+}
+#square{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border:solid;
+    border-width: 3px;
+    border-color:black;
+    left: 40%;
+    top: 30px;
+    
+}
+#squareColor{
+    background-color:#aa82dd;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+}

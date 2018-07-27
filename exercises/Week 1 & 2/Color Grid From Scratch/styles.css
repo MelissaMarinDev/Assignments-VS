@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+    border: none;
+}
+body{
+    text-align: center;
+    margin: auto;
+}
+#body{
+    position: relative;
+    
+    display: inline-block;
+    width: 70%;
+}
+div {
+   
+    height: 100px;
+    border: solid white 2px;
+    
+}
+
+.lightPink {
+    background-color: #F5C6D6;
+width: 100%;
+   display: inline-block;
+    
+}
+.darkPink {
+    background-color: #EE2E84;
+    color: black;
+    width: 25%; 
+    display: inline-block;
+
+}
+.lightBlue {
+    background-color: #85CFD8;
+    width: 50%;
+    display: inline-block;
+}
+.green {
+    background-color: #8DC63F;
+    display: inline-block;
+    width: 75%;
+}
+.orange {
+    background-color: #E76E34;
+    display: inline-block;
+    width: 25%;
+}
+/* You don't have to worry about making it responsive at this point.
+
+Here are the colors:
+
+#F5C6D6
+#EE2E84
+#85CFD8
+#8DC63F
+#E76E34
+Hints:
+It's easiest to get the even white "spacing" by actually using a thick, white border around the shapes.
+In order to use percentage widths and not have them wrap, you'll need to add the following line to the top of your CSS: */
+

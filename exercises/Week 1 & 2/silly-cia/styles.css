@@ -1,0 +1,45 @@
+/* ---main headline dark green.
+----font family "Georgia" for the main headline and the sub-headline.
+----Center the text of the main headline and the sub-headline.
+------Make the paragraphs have a line height of 25 pixels.
+-----Remove the underline from the links.
+----Make the "You might also like" label all uppercase.
+Bonus: Make an underline appear when you hover over a link.
+---Bonus: Make the image 'float' to the left of the body content. */
+
+*{
+
+
+}
+header{
+    font-weight: bolder;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    display:block;
+}
+#headline{
+    font-size: 47px;
+    color: darkgreen;
+}
+main{
+    line-height: 25px;
+    display: block;
+    font-size: 20px;
+}
+img{
+    float: left;
+    margin: 15px;
+    position: relative;
+    height: 300px;
+
+}
+a{
+    text-decoration: none;
+}
+a.hover{
+    text-decoration:underline;
+}
+#alsoLike{
+    text-transform: uppercase;
+}

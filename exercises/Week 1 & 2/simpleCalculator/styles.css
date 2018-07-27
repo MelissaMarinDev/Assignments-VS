@@ -1,0 +1,31 @@
+body{
+background-color: grey;
+text-align: center;
+}
+header{
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    padding: 5px;
+    margin:10px;
+
+
+}
+div{
+border-color: black;
+border-width: 1px;
+border-collapse: collapse;
+position: relative;
+}
+input{
+ padding: 5px;
+ margin: 5px;
+ position: relative;
+}
+.results{
+    background-color: white;
+    position: relative;
+}
+button{
+ width: 100px;
+}

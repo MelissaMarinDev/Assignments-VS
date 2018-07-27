@@ -1,0 +1,176 @@
+div {
+    position: relative;
+    display: inline-block;
+    height: 300px;
+    width: 100%
+
+}
+/* -------------the flag needs to be relative and the colors Absolute--- */
+.flags {
+    position: relative;
+    height: 240px;
+    width: 525px;
+    /* top: 20px; */
+    left: 200px;
+    border: solid;
+    border-color: black;
+}
+#franceBlue{
+    position: absolute;
+    background-color: blue;
+    width: 33%;
+    height: 240px;
+    left: 0px;
+    
+}
+#franceRed{
+    position: absolute;
+    background-color: red;
+    width: 33%;
+    height: 240px;
+    right: 0px;
+    
+
+}
+/* WHy does Germany have a white line between the colors? */
+#germanyBlack{
+    
+    background-color: black;
+    width: 100%;
+    height: 33.33%;
+    float:left;
+    position: absolute;
+    top: 0px;
+   
+}
+#germanyRed{
+   
+    background-color: red;
+    width: 100%;
+    height: 33.33%;
+   float:left;
+   position: absolute;
+   top: 33.33%;
+   
+   
+}
+#germanyYellow{
+   
+    background-color: yellow;
+    width: 100%;
+    height: 33.33%;
+   float:left;
+   position: absolute;
+   bottom: 0px;
+    
+  
+}
+#madRed{
+    position: relative;
+    background-color: red;
+    width: 72%;
+    height: 123px;
+    left: 150px;
+    top: 0px;
+    position: absolute;
+}
+#madGreen{
+  position: relative;
+    background-color: green;
+    width: 72%;
+    height: 119px;
+    left: 150px;
+    bottom: 0px;
+    float:left;
+    position: absolute;
+
+}
+#Switzerland .flags{
+    height: 240px;
+    width: 240px;
+    background-color: red;
+    left: 350px;
+    
+}
+#whiteHorizontal{
+    background-color: white;
+    width: 157px;
+    height: 44px;
+    left: 45px;
+    top: 95px;
+    position: absolute;
+}
+#whiteVertical{
+    background-color: white;
+    width: 49px;
+    height: 157px;
+    position: relative;
+    top: 40px;
+    left: 99px;
+    position: absolute;
+}
+#Sweden .flags{
+    background-color: #1d6da3;
+    
+}
+#yellowHorizontal{
+    background-color: #ffd60a;
+    width: 100%;
+    height: 53px;
+    position: relative;
+    top: 74px;
+    position: absolute;
+}
+#yellowVertical{
+    background-color: #ffd60a;
+    width: 53px;
+    height: 100%;
+    left: 130px;
+    position: absolute;
+}
+#gambiaRed{
+    
+    background-color: #d61f19;
+    width: 100%;
+    height: 80px;
+    float:left;
+    position: absolute;
+    top: 0px;
+   
+}
+#gambiaBlue{
+   
+    background-color: #12167c;
+    width: 100%;
+    height: 60px;
+   float:left;
+   margin-top:10px;
+   margin-bottom:10px;
+   position: absolute;
+   top: 81px;
+   
+   
+}
+#gambiaGreen{
+   
+    background-color: #0f7730;
+    width: 100%;
+    height: 80px;
+   float:left;
+   position: absolute;
+   bottom: 0px;
+}
+/* #gambiaWhite1{
+    background-color: white;
+    width: 525px;
+    height: 10px;
+    position: absolute;
+    
+}
+#gambiaWhite2{
+    background-color: white;
+    width: 525px;
+    height: 10px;
+    position: absolute;
+    
+} */

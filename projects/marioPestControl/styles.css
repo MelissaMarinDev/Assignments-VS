@@ -1,0 +1,30 @@
+*{
+
+}
+body{
+    text-align: center;
+
+}
+#titleOfTable{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.row{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.input#Baddies{
+    flex:2px;
+}
+
+@media (max-width: 600px){
+    .baddieImages{
+        display:none;
+        
+    }
+}

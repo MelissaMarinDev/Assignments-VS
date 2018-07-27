@@ -1,0 +1,47 @@
+body{
+    background-color: #768adb;
+}
+nav{
+ position: fixed;
+ background-color: #451577;
+ text-align: right;
+ display: block;
+ width: 100%;
+ top:10px;
+ 
+}
+#ads{
+position: fixed;
+left:0px;
+width: 200px;
+height: 100%;
+margin: 20px;
+border-right:solid;
+border-color: #8a66d1;
+
+}
+#pageHeader{
+    font-size: 150%;
+position: relative;
+text-align: center;
+margin-left: 224px;
+margin-top: 50px;
+}
+header{
+    font-size: large;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    
+
+}
+article{
+    postion: relative;
+    text-align: justify;
+   margin-left: 224px;
+    margin-top: 10px;
+   padding: 20px;
+    border: dotted;
+    border-color: #8a66d1;
+
+}
