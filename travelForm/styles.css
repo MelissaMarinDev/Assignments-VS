@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+    margin: auto;
+    background-color: lightcyan;
+}
+form{
+    display: block;
+    position: relative;
+}
