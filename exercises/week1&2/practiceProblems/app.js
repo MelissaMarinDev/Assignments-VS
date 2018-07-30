@@ -25,11 +25,14 @@
 
 function isNum (str) {
 
-    for ( var i = 0; i < 11; i++){
-        if (str == i)
+        if (str == i){
+            console.log('True');
+        } else {
+            console.log('False')
+        }
+        
     }
-  console.log(testForInt);
-}
+
 isNum('3');
 
 

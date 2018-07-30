@@ -15,39 +15,42 @@
             <h1>MARIOS PEST CONTROL COMPANY</h1>
             <h3 id = "intro">Mario and Luigi are ready to help you out! By taking out the BADDIES! Calculate below how much they will charge to get rid of YOUR pesty problem. </h3>
         </header>
-        <section>
-            <div id = "titleOfTable">
-                <div class ="baddieImages">Image</div>
-                <div>Baddie</div>
-                <div>Price per baddie</div>
-                <div>How many baddies to catch?</div>
-                <div>Your cost</div>
+        <section id="table">
+            <div id="imageColumn">Image
+                <div><img src="https://vignette.wikia.nocookie.net/fantendo/images/8/8b/Run_Goomba_Run_Art.png/revision/latest?cb=20120312211015" alt="Picture of a Gooma"></div>
+                <div><img src="https://vignette.wikia.nocookie.net/mario/images/8/8c/Bob-omb%2C_New_Super_Mario_Bros._U.png/revision/latest?cb=20121119023919" alt="Image of a Bob-ombs"></div>
+                <div><img src="https://vignette.wikia.nocookie.net/mario/images/c/c1/Cheep_Cheep%2C_New_Super_Mario_Bros._U.png/revision/latest?cb=20121106023911" alt="Cheep-Cheep flying"></div>
             </div>
-            <div class="row">
-                <div class ="baddieImages">
-                    <!-- <img src="https://vignette.wikia.nocookie.net/fantendo/images/8/8b/Run_Goomba_Run_Art.png/revision/latest?cb=20120312211015" alt="Picture of a Gooma">-->
-                </div> 
-                <div>Goomas </div>
-                <div class = "input#Baddies"> <form> 5 Coins : 
-                        <input type="number" name="goomasCaught" id="goomasTotal"/>
-                     </form> 
-                </div>
-                <div id = "totalCostGoomas"></div>
-            </div>
-            <div class="row">
-                <div class ="baddieImages"><img src="" alt=""></div>
+            <div id="nameColumn">Name
+                <div>Goombas</div>
                 <div>Bob-ombs</div>
-                <div class = "input#Baddies"><form>7 Coins<input type="number" name = "bobombsCaught" id="bobombsTotal"></form></div>
-                <div id="totalCostBobombs"></div>
-                
+                <div>Cheep-cheeps</div>
             </div>
-            <div class="row">
-                <div class ="baddieImages"><img src="" alt=""></div>
-                <div>Cheep-cheep</div>
-                <div class = "input#Baddies"><form>11 Coins<input type="number" name = "cheepsCaught" id="cheepsTotal"></form></div>
-                <div id="totalCostCheeps"></div>
-                
+            <div class="costHowManyColumn" id="title"> Cost    --    How Many?
+                <div>
+                    <form>5 Coins : <input id="countGoomas" type="number"> </form>
+                </div>
+                <div>
+                    <form>7 Coins :  <input id="countBoboms" type="number"></form>
+                </div>
+                <div>
+                    <form>11 Coins: <input id="countCheeps" type="number"></form>
+                </div>
+                <button id="enter#Baddies">Submit</button>
+                <div>Total :  <div></div></div>
             </div>
+            <div id="resultsColumn">
+                
+                <div id="yourCost">Your Cost</div>
+                
+                <div id="resultsGoombas">________</div>
+                <div id="resultsBobombs">________</div>
+                <div id="resultsCheeps">________</div>
+                <dir></dir>
+                <div id="resultsTotal">________</div>
+            </div>
+           
+            
 
         </section>
     </main>
