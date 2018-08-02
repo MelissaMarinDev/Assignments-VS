@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "businessTime"
+		},
+		{
+			"path": "businessTime/images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "businessTime"
+	}
+}

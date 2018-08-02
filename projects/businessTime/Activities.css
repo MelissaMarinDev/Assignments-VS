@@ -10,7 +10,7 @@ body{
     header{
         display: flex;
         flex-direction: column;
-        background-image: url("images/smallChildBigDog.jpg");
+        background-image: url("images/activity.feedSheep2.jpg");
         height : 80%;
         background-position: center;
         background-repeat: no-repeat;
@@ -24,21 +24,20 @@ body{
         flex-direction: row;
         justify-content: flex-end;
         align-items: flush;
-       
-        
     }
     #intro{
         color:white;
     }
     header > nav > a {
-        color: white;
+        color: black;
         margin-left: 5px;
+        font-size: 20px;
     }
     title{
         display: block;
         margin: auto;
         font-size: 50px;
-        color: white;
+        color: #black;
         text-shadow: 2px 2px black;
     }
     #mainFlexBox{
@@ -48,16 +47,18 @@ body{
         justify-content: row;
         align-items: stretch;
         align-content: space-between;
-        
-
-    }
+   }
     img {
         border: 1px solid #ddd;
         border-radius: 4px;
         padding: 5px;
         width: 150px;
-        height: 150px;
-        
+        height: 150px; 
+        margin-top: 20px;
+    }
+    figcaption{
+        color: white;
+        text-align: center;
     }
 
 @media only screen and (max-width:599px){

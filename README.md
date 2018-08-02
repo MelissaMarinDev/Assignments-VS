@@ -1,0 +1,1 @@
+This has all of my exercises and Projects from VSchool. July to Oct 2018.

@@ -1,0 +1,43 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+#flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height: 600px;
+    font-family: sans-serif;
+}
+.flexBox{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    font-family: sans-serif;
+}
+#name{
+    background-color:yellow;
+    color: red;
+    height: 70px;
+    justify-content: felx-start;
+    
+}
+#luigi{
+    background-color: red;
+}
+#about > h1{
+    background-color: white;
+    color: red;
+    align-items: center;
+    justify-content: flex-end;
+}
+#mushroom{
+    background-color:yellow;
+    height: 100px;
+}
+#imageMush{
+    height: 70px;
+    width: 70px;
+}

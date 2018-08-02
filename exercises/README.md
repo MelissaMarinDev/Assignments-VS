@@ -1,0 +1,1 @@
+This holds exercises from VSCHOOL, divided by short Daily exercises, and by week.
