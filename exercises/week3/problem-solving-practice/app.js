@@ -1,4 +1,31 @@
+// Write a filter that only has the fluffy objects:
 
+var dogs = [
+        {name: 'Fluffy', isFluffy: true},
+        {name: 'Fido', isFluffy: true},
+        {name: 'Scooby', isFluffy: true},
+        {name: 'Ralph', isFluffy: false},
+]
+// filter returns an array of what it took out.
+        var yesFluffy = dogs.filter(function(derg){ // derg is the place holder for the array index
+                if (dogs.isFluffy){
+                return derg
+                console.log(yesFluffy);
+                }
+        })
+
+/// use .map to return the dog names
+var dogNames = dogs.map(function)
+        
+
+
+
+
+
+//------------------------
+// Look It UP! Dictionary Exercise Fri Aug 3, 2018
+// 04 JUNE 2015 on Warmup, Problem Solving, Programming Principles, Level 2
+// Using objects, create a dictionary that allows a user to save words and their definitions and look them up again.
 
 // Requirements:
 // Create a function that:
@@ -9,41 +36,25 @@
 // 4.Do not allow any variation of the word to be saved as a duplicate. For example, if "brick" was entered your dictionary would reject "bricks" as a new word.
 
 
-var dictionary = {
-    // code to add entry to dictionary
-}
-function addEntry(word, definition){
-    //code to retrieve work: definition from dictionary
-    dictionary[word]= definition;
-    
-}
+// var dictionary = {}
 
-console.log(dictionary) //{}
-addEntry('hello', 'A greeting')
-console.log(dictionary) //{Hello: 'A greeting'}
-addEntry('goodbye', 'A farewell')
-// console.log(looItUp('hello')) // Hello: A greeting
+// function addEntry(word, definition){
+//         // if (dictionary[word]){
+//         //         console.log('this word is already in the dictionary')
+//         // }else{
+//         // dictionary[word] = definition;
+//         // } --or---
+//         if (!dictionary.hasOwnProperty(word)){
+//                 dictionary[word] = definition;
+//         }
+// }
 
+// console.log(dictionary) // {}
 
-        // console.log('Hi! Welcome to Your Dictionary');
-        // options = ['Read Dictionary - see the words you have added. ', 'Search Dictionary - Can you find the word? ', 'Add New Word - give the word and definition. ', 'Exit Dictionary']
-        // var userName = ask.question(options, 'What would you like to do? ')
-        // While (options[i] === 'Exit Dictionary'){
-
-        //     if (options[i] === 'Read Dictionary - see the words you have added. '){
-
-        //     }else if(options[i] === 'Search Dictionary - Can you find the word? '){
-
-        //     }else if(options[i] === 'Add New Word - give the word and definition. '){
-
-
-        //     }else if(options[i] === 'Exit Dictionary'){
-        //         console.log('See you next time!')
-        //     }
-
-        // }
-
-
+// addEntry('hello', 'A greeting')
+// console.log(dictionary) // {hello: /A greeting'}
+// addEntry('hello', 'A farewell')
+// console.log(lookItUp('hello')) //hello: A greeting 
 
 
 // ----------------------------------

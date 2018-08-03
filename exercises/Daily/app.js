@@ -1,3 +1,20 @@
+// .fill() // replace everying 
+// .entries()
+
+var fruit = ["Banana", " Apple", "Oranges"];
+
+console.log(fruit);
+
+
+
+
+
+
+
+
+
+
+
 // Count Count Code   Aug 2, 2018
 
 // `Write a function that returns the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the "d", so "cope" and "cooe" would also count.
@@ -24,18 +41,18 @@
             //     return count;
             // }
 //-----------------My attempt * incomplete----------------
-function countCode(string) {
-for (var i = 0; i < string.length; i++) //will loop through the string
-var tempCounter = 0;
-//count the 'co*e' in each string. Find the 'c0' and return the index=indexOf(). 
-var foundC = string.indexOf("co");
-var checkE = 0;
-    if (foundC === "co"){
-        checkE = string.charAt(foundC + 3)
-        console.log(checkE);
-        if (checkE === 'e'){
-        tempCounter ++;
-        }
+// function countCode(string) {
+// for (var i = 0; i < string.length; i++) //will loop through the string
+// var tempCounter = 0;
+// //count the 'co*e' in each string. Find the 'c0' and return the index=indexOf(). 
+// var foundC = string.indexOf("co");
+// var checkE = 0;
+//     if (foundC === "co"){
+//         checkE = string.charAt(foundC + 3)
+//         console.log(checkE);
+//         if (checkE === 'e'){
+//         tempCounter ++;
+//         }
     }
 
 // Check the fourth index for the 'e' by returning the character at a specified index = charAt(). 
