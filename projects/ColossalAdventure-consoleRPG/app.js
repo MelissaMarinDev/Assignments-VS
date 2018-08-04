@@ -28,23 +28,28 @@ var userName = ask.question('May I have your name? ');
 console.log(`\t Hi ${userName}! Lets get started.`); 
 
 var userHP = 100; 
-var enemy, chance, enemyHP, damageToEnemy, damageToUser;
+var enemy, chance, enemyHP, damageToEnemy, damageToUser, enemiesKilled;
 
 
 while(userHP > 0){
-menuChoice = ['Walking', 'Inventory', 'HP'];
+menuChoice = ['Walking', 'Stats'];
 //------------ research how to get the select options to show w, h, and i
 index = ask.keyInSelect(menuChoice, 'What would you like to do? ');
 
     if (menuChoice === 'Walking'){
-        console.log('you are in walking')
+        console.log('Time for a stroll.')
         walk();
-    }else if (menuChoice === 'Inventory'){
-        // inventory();
-        console.log('you are in inventory')
-    }else if (menuChoice === 'HP'){
-        // hp();
-        console.log('you are in HP')    
+    }else if (menuChoice === 'Stats'){
+        console.log(`Here are your stats: \n HP : ${userHP} \n Kills: ${enemiesKilled}`) 
+        if (enemiesKilled < 3){
+            console.log(`Status: Novice`);
+        } else if (enemiesKilled >= 3 &&& enemiesKilled < 10){
+           console.log(`Status: Intermediate`);
+        } else if (enemiesKilled >= 10  && enemiesKilled < 20){
+            console.log(`Status: Advanced`);
+        } else if (enemiesKilled > 20){
+            console.log(`Status: Expert`);       
+        }  
     }else {
         console.log('Dont turn yellow now, you must choose one of the other options.')
     }
