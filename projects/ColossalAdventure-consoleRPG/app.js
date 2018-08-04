@@ -10,12 +10,12 @@ var extra = require('./ColAdvFunctions.js')
 // ----Console must ask for the player's name and store it
 // Walking: 
 // The console will ask the user to enter a "w" to walk
-// Every time the player walks, a random algorithm will be run that determines if a wild enemy has appeared (A 1/3 or 1/4 chance of being attacked)
+// ---Every time the player walks, a random algorithm will be run that determines if a wild enemy has appeared (A 1/3 or 1/4 chance of being attacked)
 // If a wild enemy appears: 
 // The enemy is random (can be chosen out of a minimum of 3 different enemy names)
 // The user can decide to attack or run
 // If attacking, you will choose a random attack power between a min and max
-// If running, you will choose a random number between 1 and 2 - meaning a 50% chance of escaping
+// ----If running, you will choose a random number between 1 and 2 - meaning a 50% chance of escaping
 // After the player attacks or runs the enemy attacks back for a random damage amount
 // If the player kills the enemy you can give the Player some HP and a special item that is stored in the inventory
 // If the enemy kills the player the console prints an cool death message and the game ends
@@ -26,18 +26,20 @@ var extra = require('./ColAdvFunctions.js')
 console.log("\n Hello Player! Welcome to Colossal Adventures!");
 var userName = ask.question('May I have your name? ');
 console.log(`\t Hi ${userName}! Lets get started.`); 
-var hp = 20; 
 
-while(hp > 0){
+var userHP = 20; 
+var enemy;
+
+
+while(userHP > 0){
 menuChoice = ['Walking', 'Inventory', 'HP'];
 // ----------index = ask.keyInSelect
 //------------ research how to get the select options to show w, h, and i
 index = ask.keyInSelect(menuChoice, 'What would you like to do? ');
 
     if (menuChoice === 'Walking'){
-        // walk();j
         console.log('you are in walking')
-
+        walk();
     }else if (menuChoice === 'Inventory'){
         // inventory();
 console.log('you are in inventory')
