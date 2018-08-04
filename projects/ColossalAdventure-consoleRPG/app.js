@@ -33,7 +33,6 @@ var enemy;
 
 while(userHP > 0){
 menuChoice = ['Walking', 'Inventory', 'HP'];
-// ----------index = ask.keyInSelect
 //------------ research how to get the select options to show w, h, and i
 index = ask.keyInSelect(menuChoice, 'What would you like to do? ');
 
@@ -42,7 +41,7 @@ index = ask.keyInSelect(menuChoice, 'What would you like to do? ');
         walk();
     }else if (menuChoice === 'Inventory'){
         // inventory();
-console.log('you are in inventory')
+        console.log('you are in inventory')
     }else if (menuChoice === 'HP'){
         // hp();
         console.log('you are in HP')    
