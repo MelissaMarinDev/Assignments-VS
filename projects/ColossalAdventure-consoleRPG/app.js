@@ -28,7 +28,7 @@ var userName = ask.question('May I have your name? ');
 console.log(`\t Hi ${userName}! Lets get started.`); 
 
 var userHP = 100; 
-var enemy, chance, enemyHP;
+var enemy, chance, enemyHP, damageToEnemy, damageToUser;
 
 
 while(userHP > 0){
@@ -50,3 +50,4 @@ index = ask.keyInSelect(menuChoice, 'What would you like to do? ');
     }
 
 }
+console.log(`You died! Thank you for playing Colossal Adventures. GAME END`);
