@@ -27,8 +27,8 @@ console.log("\n Hello Player! Welcome to Colossal Adventures!");
 var userName = ask.question('May I have your name? ');
 console.log(`\t Hi ${userName}! Lets get started.`); 
 
-var userHP = 20; 
-var enemy;
+var userHP = 100; 
+var enemy, chance, enemyHP;
 
 
 while(userHP > 0){
