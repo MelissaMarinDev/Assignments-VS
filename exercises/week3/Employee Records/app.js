@@ -33,5 +33,5 @@ function EmployeeConstructor(name, jobTitle, salary, status){
     }
 }
 
-var melissaMarin = newEmployeeConstructor("Melissa", "Web Deveoper", "$5000 per month", "PartTime")
+var melissaMarin = new EmployeeConstructor('Melissa', 'Web Deveoper', '$5000 per month', 'PartTime')
     console.log(melissaMarin);
