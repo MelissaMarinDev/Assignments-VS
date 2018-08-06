@@ -1,16 +1,15 @@
 var enemy, chance, enemyHP, damageToEnemy, damageToUser
 
-function walk(){
-    chance();
+function walk(userInfo, enemyInfo){
+    var chance = chance();
     if (chance > 3){
        console.log('Walking is good for the soul and for you HP. Your HP just increased 10 points.');
-        userHP += 20;
-        return userHP;
+        userInfo.userHP += 20;
+        return userInfo.userHP;
     } else {
-        whatEnemy() //will return the enemy or the type of enemy
-        enemyAppears() 
-    }
-    
+        enemyInfo = whatEnemy(enemyInfo) //will return the enemy or the type of enemy
+        enemyAppears(userInfo, enemyInfo); 
+    }  
 }
 function enemyAttack(){
     if (enemy === 'dwarf'){
@@ -52,8 +51,8 @@ function enemyAttack(){
         }
     }
 }
-function userAttack(){
-    chance()
+function userAttack(enemyInfo){
+    chance = chance();
     if (chance < 3){
         console.log(`Missed!`)    
     }else if (chance >= 3 && chance < 6){
@@ -66,56 +65,54 @@ function userAttack(){
         return damageToEnemy;
     }
 }
-function enemyAppears(){
-    while(userHP > 0 || enemyHP > 0) {
+function enemyAppears(userInfo, enemyInfo){
+    while(userInfo.userHP > 0 || enemyInfo.enemyHP > 0) {
         fightMenu = ['Run', 'Fight'];
         index = ask.keyInSelect(fightMenu, 'What would you like to do? '); 
+        
         if (fightMenu === 'Run'){  // user chose to run
-            chance();
-            if (chance > 5){  // user got away
-                console.log(`That was close! You got away from the ${enemy}`);
-                enemyHP = 0;
+            var chance = chance();
+            if (chance >= 5){  // user got away
+                console.log(`That was close! You got away from the ${enemyInfo.enemyName}`);
+                enemyInfo.enemyHP = 0;
             } else {  // user did not get away
-                console.log(`The ${enemy} cut you off! Time to fight.`);
-                userAttack();  //returns damageToEnemy
-                enemyAttack(); // returns damageToUser
-                enemyHP -= damageToEnemy;
-                userHP -+ damageToUser;
+                console.log(`The ${enemyInfo.enemyName} cut you off! Time to fight.`);
+                var damageToEnemy = userAttack(enemyInfo);  //returns damageToEnemy
+                var damageToUser = enemyAttack(userInfo); // returns damageToUser
+                enemyInfo.enemyHP -= damageToEnemy;
+                userInfo.userHP -+ damageToUser;
             }
         } else if (fightMenu === 'Fight'){
             console.log(`Fight!`)
-            userAttack();  //returns damageToEnemy
-            enemyAttack(); // returns damageToUser
+            var damageToEnemy = userAttack(enemyInfo);  //returns damageToEnemy
+            var damageToUser = enemyAttack(userInfo); // returns damageToUser
             enemyHP -= damageToEnemy;
             userHP -+ damageToUser;
         }
-    if (enemyHP === 0){
-        console.log(`You defeated the ${enemy}! Great job!`)
+    if (enemyInfo.enemyHP === 0){
+        console.log(`You defeated the ${enemyInfo.enemyName}! Great job!`)
     }
     
 }
-function whatEnemy(){
+function whatEnemy(enemyInfo){
     var temp = Math.floor(Math.random() * 3); // will have options 0 to 2
     if (temp === 0 ){
         console.log('It is a dwarf!');
-        enemy = 'dwarf';
-        enemyHP = 20;
-        return enemy;
-        return enemyHP;
+        enemyInfo.enemyName = 'dwarf';
+        enemyInfo.enemyHP = 20;
+        return enemyInfo;
     }
     if (temp === 1 ){
         console.log('It is an evil knight!');
-        enemy = 'evil knight';
-        enemyHP = 40;
-        return enemy;
-        return enemyHP;
+        enemyInfo.enemyName = 'evil knight';
+        enemyInfo.enemyHP = 40;
+        return enemyInfo;
     }
     if (temp === 2 ){
         console.log('It is an orge!');
-        enemy = 'orge';
-        enemyHP = 60;
-        return enemy; 
-        return enemyHP;
+        enemyInfo.enemyName = 'orge';
+        enemyInfo.enemyHP = 60;
+        return enemyInfo; 
     }
     
 }
@@ -127,7 +124,7 @@ function chance(){
 
 module.exports = { 
     walk: walk,
-    enemiesKilled: enemiesKilled,
+    enemyInfo: enemyInfo,
     inventory: inventory,
     userHP: userHP,
 }

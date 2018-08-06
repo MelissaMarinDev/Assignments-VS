@@ -1,5 +1,5 @@
 var ask = require('readline-sync')
-var {gameFunctions} = require('./gameFunctions')
+var walk = require('./gameFunctions')
 /* if you want to modularize your code( putting functions 
     in other files and importing them )  use the key word
         module.exports at the bottom of your file you are exporting
