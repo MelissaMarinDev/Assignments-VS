@@ -1,68 +1,86 @@
+var ask = require('readline-sync')
+var {enemyInfo, userInfo} = require('./ColAdvGame.js')
 var enemy, chance, enemyHP, damageToEnemy, damageToUser
 
-function walk(userInfo, enemyInfo){
-    var chance = chance();
-    if (chance > 3){
-       console.log('Walking is good for the soul and for you HP. Your HP just increased 10 points.');
-        userInfo.userHP += 20;
-        return userInfo.userHP;
-    } else {
-        enemyInfo = whatEnemy(enemyInfo) //will return the enemy or the type of enemy
-        enemyAppears(userInfo, enemyInfo); 
-    }  
-}
-function enemyAttack(){
+
+function enemyAttack(userInfo, enemyInfo){
+    strengthOfHit = chance()
+    console.log(`${enemyInfo.enemyName}'s strength: ${strengthOfHit}`)
+
     if (enemy === 'dwarf'){
-        console.log(`The ${enemy} attacks.`)
-         if (chance < 3){
+        console.log(`The ${enemyInfo.enemyName} attacks.`)
+         if (strengthOfHit < 3){
             console.log(`Missed!`)    
-         }else if (chance >= 3 && chance < 6){
-            console.log(`Hit! Damage -3 to the ${enemy}.`)
+         }else if (strengthOfHit >= 3 && strengthOfHit < 6){
+            console.log(`Hit! Damage -3 to ${userInfo.userName}.`)
             damageToUser = -3;
         return damageToUser;
-         }else if (chance >= 6){
-            console.log(`Direct Hit! Damage -5 to the ${enemy}.`)
+         }else if (strengthOfHit >= 6){
+            console.log(`Direct Hit! Damage -5 to the ${userInfo.userName}.`)
             damageToUser = -5;
             return damageToUser;
-    } else if (enemy === 'evil knight'){
-        console.log(`The ${enemy} attacks.`)
-         if (chance < 3){
+         }
+    } else if (enemyInfo.enemyName === 'evil knight'){
+        console.log(`The ${enemyInfo.enemyName} attacks.`)
+         if (strengthOfHit < 3){
             console.log(`Missed!`)    
-        }else if (chance >= 3 && chance < 6){
-            console.log(`Hit! Damage -5 to the ${enemy}.`)
-            damageToUser = -5;
+        }else if (strengthOfHit >= 3 && strengthOfHit < 6){
+            console.log(`Hit! Damage -5 to the ${userInfo.userName}.`)
+            damageToUser = 5;
             return damageToUser;
-        }else if (chance >= 6){
-            console.log(`Direct Hit! Damage -10 to the ${enemy}.`)
-            damageToUser = -10;
+        }else if (strengthOfHit >= 6){
+            console.log(`Direct Hit! Damage -10 to ${userInfo.userName}.`)
+            damageToUser = 10;
             return damageToUser;
-    }else if (enemy === 'orge'){
-            console.log(`The ${enemy} attacks.`)
-             if (chance < 3){
+        }
+    }else if (enemyInfo.enemyName === 'orge'){
+            console.log(`The ${enemyInfo.enemyName} attacks.`)
+             if (strengthOfHit < 3){
             console.log(`Missed!`)    
-        }else if (chance >= 3 && chance < 6){
-            console.log(`Hit! Damage -10 to the ${enemy}.`)
-            damageToUser = -10;
+        }else if (strengthOfHit >= 3 && strengthOfHit < 6){
+            console.log(`Hit! Damage -10 to ${userInfo.userName}.`)
+            damageToUser = 10;
             return damageToUser;
-        }else if (chance >= 6){
-            console.log(`Direct Hit! Damage -20 to the ${enemy}.`)
-            damageToUser = -20;
+        }else if (strengthOfHit >= 6){
+            console.log(`Direct Hit! Damage -20 to the ${userInfo.userName}.`)
+            damageToUser = 20;
             return damageToUser;
         }
     }
 }
-function userAttack(enemyInfo){
-    chance = chance();
-    if (chance < 3){
-        console.log(`Missed!`)    
-    }else if (chance >= 3 && chance < 6){
-        console.log(`Hit! Damage -5 to the ${enemy}.`)
-        damageToEnemy = -5;
+function userAttack(userInfo, enemyInfo){
+    strengthOfHit = chance();
+
+    console.log(`${userInfo.userName}'s strength: ${strengthOfHit}`)
+
+    if (strengthOfHit < 3){
+        console.log(`Missed!`)  
         return damageToEnemy;
-    }else if (chance >= 6){
-        console.log(`Direct Hit! Damage -15 to the ${enemy}.`)
-        damageToEnemy = -10;
+     }else if (strengthOfHit >= 3 && strengthOfHit < 6){
+        console.log(`Hit! Damage -5 to the ${enemyInfo.enemyName}.`)
+        damageToEnemy = 5;
         return damageToEnemy;
+    }else if (strengthOfHit >= 6){
+        console.log(`Direct Hit! Damage -15 to the ${enemyInfo.enemyName}.`)
+        damageToEnemy = 15;
+        return damageToEnemy;
+        
+    }
+}
+function fightTime(userInfo, enemyInfo){
+    while (userInfo.userHP> 0 || enemyInfo.enemyHP > 0){
+            console.log(`Attack him ${userInfo.userName}!`)
+        var damageToEnemy = userAttack(userInfo, enemyInfo);  //returns damageToEnemy
+        var damageToUser = enemyAttack(userInfo, enemyInfo)// returns   damageToUser
+
+            console.log(`Before fight: \n ${userInfo.userName}HP:${userInfo.userHP}\t\t\t${enemyInfo.enemyName}'s HP: ${enemyInfo.enemyHP}`)
+
+        enemyInfo.enemyHP -= damageToEnemy;
+        userInfo.userHP -= damageToUser;
+        
+            console.log(`After this fight: \n ${userInfo.userName}'s HP: ${userInfo.userHP} \t\t\t ${enemyInfo.enemyName}'s HP: ${enemyInfo.enemyHP}`)
+        
+        return userInfo, enemyInfo
     }
 }
 function enemyAppears(userInfo, enemyInfo){
@@ -70,29 +88,29 @@ function enemyAppears(userInfo, enemyInfo){
         fightMenu = ['Run', 'Fight'];
         index = ask.keyInSelect(fightMenu, 'What would you like to do? '); 
         
-        if (fightMenu === 'Run'){  // user chose to run
-            var chance = chance();
-            if (chance >= 5){  // user got away
-                console.log(`That was close! You got away from the ${enemyInfo.enemyName}`);
-                enemyInfo.enemyHP = 0;
+        if (index === 0){  // user chose to run
+            var randomRun = chance(); /// 0-4 fights, 5-10 gets away
+
+            console.log(`0-4 fights, 5-10 gets away. Your roll = ${randomRun}`)
+            
+            if (randomRun >= 5){  // user got away
+                    console.log(`////////////////\n That was close! You got away from the ${enemyInfo.enemyName}.`);
+                enemyInfo.enemyHP === 0;
+                return enemyInfo;
             } else {  // user did not get away
-                console.log(`The ${enemyInfo.enemyName} cut you off! Time to fight.`);
-                var damageToEnemy = userAttack(enemyInfo);  //returns damageToEnemy
-                var damageToUser = enemyAttack(userInfo); // returns damageToUser
-                enemyInfo.enemyHP -= damageToEnemy;
-                userInfo.userHP -+ damageToUser;
+                    console.log(`The ${enemyInfo.enemyName} cut you off! \n\t\t Time to fight.`);
+                fightTime(userInfo, enemyInfo);
+                return userInfo, enemyInfo;
             }
-        } else if (fightMenu === 'Fight'){
-            console.log(`Fight!`)
-            var damageToEnemy = userAttack(enemyInfo);  //returns damageToEnemy
-            var damageToUser = enemyAttack(userInfo); // returns damageToUser
-            enemyHP -= damageToEnemy;
-            userHP -+ damageToUser;
+        } else if (index === 1){  // The user chose to fight
+                console.log(`Fight!`)
+            fightTime(userInfo, enemyInfo);
+            return userInfo, enemyInfo;
         }
-    if (enemyInfo.enemyHP === 0){
-        console.log(`You defeated the ${enemyInfo.enemyName}! Great job!`)
     }
-    
+    if (enemyInfo.enemyHP === 0){
+        console.log(`You defeated the ${enemyInfo.enemyName}! Great job!`);
+    }   
 }
 function whatEnemy(enemyInfo){
     var temp = Math.floor(Math.random() * 3); // will have options 0 to 2
@@ -117,16 +135,28 @@ function whatEnemy(enemyInfo){
     
 }
 function chance(){
-    chance = Math.floor(Math.random() * 11);
+    var chance = Math.floor(Math.random() * 11);
     return chance;
 }
+function walk(userInfo, enemyInfo){
+    var randomNumZeroToTen = chance();
+    console.log(`more than 3 is walk, 0, 1, 2 is enemy === ${randomNumZeroToTen}`)
+    if (randomNumZeroToTen > 3){
+       console.log('Walking is good for the soul and for you HP. Your HP just increased 20 points.');
+        userInfo.userHP += 20;
 
+        console.log(`${userInfo.userName} = ${userInfo.userHP}`)
 
-module.exports = { 
-    walk: walk,
-    enemyInfo: enemyInfo,
-    inventory: inventory,
-    userHP: userHP,
+        return userInfo.userHP;
+    } else {
+        console.log(`//////////////// \n Oh no! A monster! `)
+        whatEnemy(enemyInfo) //will return the enemy or the type of enemy
+        enemyAppears(userInfo, enemyInfo);
+        
+        
+    }  
 }
 
-
+module.exports = {
+    walk: walk,
+}

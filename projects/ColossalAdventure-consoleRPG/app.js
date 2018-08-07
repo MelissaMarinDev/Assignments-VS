@@ -1,5 +1,5 @@
 var ask = require('readline-sync')
-var extra = require('./ColAdvFunctions.js')
+var {userInfo, enemyInfo} = require('./ColAdvFunctions.js')
 // Colossal Adventure (Console RPG)
 // The year is 1985. Your job is to build a text-based (console) RPG game.
 
@@ -43,7 +43,7 @@ index = ask.keyInSelect(menuChoice, 'What would you like to do? ');
         console.log(`Here are your stats: \n HP : ${userHP} \n Kills: ${enemiesKilled}`) 
         if (enemiesKilled < 3){
             console.log(`Status: Novice`);
-        } else if (enemiesKilled >= 3 &&& enemiesKilled < 10){
+        } else if (enemiesKilled >= 3 && enemiesKilled < 10){
            console.log(`Status: Intermediate`);
         } else if (enemiesKilled >= 10  && enemiesKilled < 20){
             console.log(`Status: Advanced`);
