@@ -10,7 +10,11 @@ function enemyAttack(userInfo, enemyInfo){
     if (enemy === 'dwarf'){
         console.log(`The ${enemyInfo.enemyName} attacks.`)
          if (strengthOfHit < 3){
-            console.log(`Missed!`)    
+            console.log(`Missed!`)
+            damageToUser = 0
+            return damageToUser
+            ///////////////////////////////
+            // Why didn't this section move to console.log?
          }else if (strengthOfHit >= 3 && strengthOfHit < 6){
             console.log(`Hit! Damage -3 to ${userInfo.userName}.`)
             damageToUser = -3;
@@ -23,7 +27,9 @@ function enemyAttack(userInfo, enemyInfo){
     } else if (enemyInfo.enemyName === 'evil knight'){
         console.log(`The ${enemyInfo.enemyName} attacks.`)
          if (strengthOfHit < 3){
-            console.log(`Missed!`)    
+            console.log(`Missed!`) 
+            damageToUser = 0
+            return damageToUser   
         }else if (strengthOfHit >= 3 && strengthOfHit < 6){
             console.log(`Hit! Damage -5 to the ${userInfo.userName}.`)
             damageToUser = 5;
@@ -36,7 +42,9 @@ function enemyAttack(userInfo, enemyInfo){
     }else if (enemyInfo.enemyName === 'orge'){
             console.log(`The ${enemyInfo.enemyName} attacks.`)
              if (strengthOfHit < 3){
-            console.log(`Missed!`)    
+            console.log(`Missed!`) 
+            damageToUser = 0
+            return damageToUser   
         }else if (strengthOfHit >= 3 && strengthOfHit < 6){
             console.log(`Hit! Damage -10 to ${userInfo.userName}.`)
             damageToUser = 10;
@@ -54,7 +62,8 @@ function userAttack(userInfo, enemyInfo){
     console.log(`${userInfo.userName}'s strength: ${strengthOfHit}`)
 
     if (strengthOfHit < 3){
-        console.log(`Missed!`)  
+        console.log(`Missed!`) 
+        damageToEnemy = 0; 
         return damageToEnemy;
      }else if (strengthOfHit >= 3 && strengthOfHit < 6){
         console.log(`Hit! Damage -5 to the ${enemyInfo.enemyName}.`)
@@ -68,25 +77,25 @@ function userAttack(userInfo, enemyInfo){
     }
 }
 function fightTime(userInfo, enemyInfo){
-    while (userInfo.userHP> 0 || enemyInfo.enemyHP > 0){
+    
             console.log(`Attack him ${userInfo.userName}!`)
         var damageToEnemy = userAttack(userInfo, enemyInfo);  //returns damageToEnemy
         var damageToUser = enemyAttack(userInfo, enemyInfo)// returns   damageToUser
 
             console.log(`Before fight: \n ${userInfo.userName}HP:${userInfo.userHP}\t\t\t${enemyInfo.enemyName}'s HP: ${enemyInfo.enemyHP}`)
 
-        enemyInfo.enemyHP -= damageToEnemy;
-        userInfo.userHP -= damageToUser;
-        
+        enemyInfo.enemyHP -= damageToEnemy; // enemyHP - damageToEnemy = enemyHP
+        userInfo.userHP -= damageToUser;  //userHP - damageToUser = userHP
+                                            //100 - 0   = 100 ?? Why is this making it HP 0?
             console.log(`After this fight: \n ${userInfo.userName}'s HP: ${userInfo.userHP} \t\t\t ${enemyInfo.enemyName}'s HP: ${enemyInfo.enemyHP}`)
         
         return userInfo, enemyInfo
-    }
+    
 }
 function enemyAppears(userInfo, enemyInfo){
-    while(userInfo.userHP > 0 || enemyInfo.enemyHP > 0) {
+    while (userInfo.userHP != 0 || enemyInfo.enemyHP != 0) {
         fightMenu = ['Run', 'Fight'];
-        index = ask.keyInSelect(fightMenu, 'What would you like to do? '); 
+        index = ask.keyInSelect(fightMenu, 'Would you like to run or fight? '); 
         
         if (index === 0){  // user chose to run
             var randomRun = chance(); /// 0-4 fights, 5-10 gets away
@@ -103,7 +112,7 @@ function enemyAppears(userInfo, enemyInfo){
                 return userInfo, enemyInfo;
             }
         } else if (index === 1){  // The user chose to fight
-                console.log(`Fight!`)
+                console.log(`////////////////////\n\t\t\tFight!`)
             fightTime(userInfo, enemyInfo);
             return userInfo, enemyInfo;
         }
