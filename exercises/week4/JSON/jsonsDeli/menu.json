@@ -1,0 +1,138 @@
+{
+	"appetizers": [{
+			"name": "Jalepeno Poppers",
+			"ingredients": [{
+				"dairy": "milk",
+				"eggs": 2,
+				"drygoods": "flour",
+				"spice": "salt"
+			}],
+			"description": "Fresh jalepeno's with a spicy batter. Deep fried to perfection."
+		},
+		{
+			"name": "Potatoe Wedges",
+			"ingredients": [{
+				"dairy": "milk",
+				"eggs": 0,
+				"drygoods": "",
+				"spice": [{
+					"salt": true,
+					"pepper": true,
+					"chiliPowder": true
+				}]
+			}],
+			"description": "Backed potatoes that are covered in butter, cheese and home made salsa."
+		}
+	],
+	"cold sandwiches": [{
+			"name": "Ham and Cheese",
+			"ingredients": [{
+				"dairy": "cheese",
+				"eggs": 0,
+				"drygoods": "",
+				"spice": [{
+					"salt": true,
+					"pepper": true,
+					"chiliPowder": false
+				}],
+				"meat": "ham"
+			}],
+			"description": "Ham and Cheese"
+		},
+		{
+			"name": "RoastBeef",
+			"ingredients": [{
+				"dairy": "",
+				"eggs": 0,
+				"drygoods": "",
+				"spice": [{
+					"salt": true,
+					"pepper": true,
+					"chiliPowder": false
+				}],
+				"meat": "roastbeef"
+			}],
+			"description": "RoastBeef on Rye"
+		}
+	],
+	"hotSandwiches": [{
+			"name": "TortaPicosa",
+			"ingredients": [{
+				"dairy": "cheese",
+				"eggs": 2,
+				"drygoods": "bread",
+				"spice": [{
+					"salt": true,
+					"pepper": true,
+					"chiliPowder": true
+				}],
+				"meat": "unknown"
+			}],
+			"description": "Hot mexican sandwhich on a bolillo."
+		},
+		{
+			"name": "Tacos",
+			"ingredients": [{
+				"dairy": "cheese",
+				"eggs": 2,
+				"drygoods": "tortilla",
+				"spice": [{
+					"salt": true,
+					"pepper": true,
+					"chiliPowder": true
+				}],
+				"meat": "unknown"
+			}],
+			"description": "Tacos eat them hot"
+		}
+	],
+	"desserts": [{
+				"name": "Fried Icecream",
+				"ingredients": [{
+						"dairy": "cheese",
+						"eggs": 2,
+						"drygoods": "tortilla",
+						"spice": [{
+							"salt": true,
+							"pepper": true,
+							"chiliPowder": false
+						}],
+						"description": "Fried Icecream, vanilla"
+					},
+					{
+						"name": "3leches",
+						"ingredients": [{
+							"dairy": "cheese",
+							"eggs": 2,
+							"drygoods": "tortilla",
+							"spice": [{
+								"salt": true,
+								"pepper": true,
+								"chiliPowder": false
+							}],
+							"description": " cake soaked in 3 types of milk"
+						}]
+					}
+				],
+				"drinks": [{
+						"name": "Bloody Mary",
+						"ingredients": [{
+							"water": true,
+							"coloring": true,
+							"alcohol": "optional"
+						}],
+						"description": "A bloody mary"
+					},
+					{
+						"name": " milk",
+						"ingredients": [{
+							"water": false,
+							"coloring": true,
+							"alcohol": "optional"
+						}],
+						"description": "milk for the bones"
+					}
+				]
+
+
+			}

@@ -1,0 +1,13 @@
+.gridBack{
+    background-image: url("images&fonts/noise.png"), url("images&fonts/"), url("images&fonts/gridlines-opaque.png"),url("images&fonts/contours-opaque.png"), url("images&fonts/huntington.jpg");
+    /* background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat; */
+    /* padding: 15px; */
+}
+.whiteBack{
+    
+}
+.greenBackTrees{
+    background-color: #c1ddcd;
+    background-image: url("images&fonts/bamboo.png");
+}

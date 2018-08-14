@@ -1,0 +1,39 @@
+#prob1{
+    display:grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4,50px);
+    grid-gap: 10px;;
+}
+#prob1 > #boxRed{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#prob1 > #boxBlue{
+   grid-column-start: 3;
+   grid-column-end: -1;
+}
+#prob1 > #boxGreen{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+#prob1 > #boxPurple{
+    grid-column-start: 2;
+    grid-column-end: -1;
+}
+#prob1 > #boxYellow{
+    grid-column-start:1;
+    grid-column-end: -1;
+}
+
+/* --------------- */
+#prob2{
+
+}
+#prob3{
+
+}
+#prob4{
+
+}
+
+

@@ -1,0 +1,23 @@
+#parentBox{
+    display:flex;
+    justify-content: space-around;
+    flex-direction: row;
+} 
+
+.button{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around; */
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+}
+#b1{
+    background-color: green;
+}
+#b2{
+    background-color: red;
+}
+#b3{
+    background-color: blue;
+}
