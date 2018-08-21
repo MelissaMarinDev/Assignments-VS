@@ -1,5 +1,35 @@
+
 body{
-    color: #325050;
-    font-family: 'Libre Baskerville', sans-serif;
-    text-align: center;
+    color: rgb(51,80,94);
+    font-family: 'Libre Baskerville', serif;
+    text-align: left;
+    line-height: 1.6;  
+    padding: 15px;
+    margin: 15px;
 }
+#beauty {
+   
+}
+
+.footlink{
+    color: white;
+    padding: 30px;
+    text-align: center;
+  
+}
+.intro{
+    padding: 30px;
+}
+.daveShea{
+    color: #eff1f4;
+    position:relative;  
+}
+.daveShea :nth-child(2){
+    position: absolute; 
+    bottom: 0px;
+    width: 100%;
+}
+section{
+    padding: 30px;
+}
+

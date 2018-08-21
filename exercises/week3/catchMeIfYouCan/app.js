@@ -3,8 +3,6 @@
 
 // 1a) Write a function that returns the sum of two numbers. Throw an error if either argument is not of the data type number:
 
-
-
 // function sum(x, y){  
 //   //check data types first and throw error
 

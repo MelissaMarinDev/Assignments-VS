@@ -1,21 +1,23 @@
 
 #prob1{
-    border-radius: 50px;
-    
+    border-radius: 50px; 
 }
-#prob1 > #boxRed{
+.red{
     background-color: red;
 }
-#prob1 > #boxBlue{
-    background-color: Blue;
-}
-#prob1 > #boxGreen{
-    background-color: green;
-}
-#prob1 > #boxPurple{
+.purple{
     background-color: purple;
 }
-#prob1 > #boxYellow{
+.green{
+    background-color: green;
+}
+.yellow{
     background-color: yellow;
+}
+.blue{
+    background-color: blue;
+}
+.lightPurple{
+    background-color: #752ec1;
 }
 
