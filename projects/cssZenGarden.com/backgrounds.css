@@ -1,8 +1,6 @@
 .gridBack{
-    background-image: url("images&fonts/noise.png"),url("images&fonts/gridlines-opaque.png"), url("images&fonts/huntington.jpg");
-    background-size: 20%, 100%, 100% 100%;
-    background-position: center, left top, fill;
-    background-repeat: no-repeat, repeat, no-repeat;
+    background: url("images&fonts/noise.png") center center no-repeat,url("images&fonts/gridlines-opaque.png") left top repeat, url("images&fonts/huntington.jpg")left top no-repeat;
+   background-size: 50%, auto, cover;
     
 
 }
@@ -16,18 +14,16 @@
 .daveShea{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 70% 30%;
+    grid-template-rows: 180px 100px;
     grid-row-gap: 5px;
 
     position:relative;
     background-image:url("images&fonts/gridlines-opaque.png"), url("images&fonts/koi.jpg");
     background-size:  250px 200px, 100% 100%;
-    background-position:  left top, contain;
-    background-repeat:  repeat, auto;
     padding: 25px;
 }
 .footLink{
-    background-color:#33564d;
+    background-color:rgb(32, 77, 80, 1);
     position:absolute;
     right: 0px;
     bottom:0px;
